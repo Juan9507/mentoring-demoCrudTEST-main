@@ -5,6 +5,7 @@ import com.crud.democrud.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -21,9 +22,7 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    public UsuarioModel actualizarUsuario(UsuarioModel usuario){
-        return usuarioRepository.save(usuario);
-    }
+    public UsuarioModel actualizarUsuario(UsuarioModel usuario) { return usuarioRepository.save(usuario);}
 
     public Optional<UsuarioModel> obtenerPorId(Long id){
         return usuarioRepository.findById(id);
