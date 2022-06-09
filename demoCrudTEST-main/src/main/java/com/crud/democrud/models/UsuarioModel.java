@@ -93,18 +93,8 @@ public class UsuarioModel {
      * Punto de enlace entre la entidad del usuario y rol
      * (un usuario puede tener muchos roles)
      */
-    @OneToMany(
-            fetch = FetchType.EAGER,
-            targetEntity = UsuarioRolModel.class,
-            cascade = CascadeType.REMOVE,
-            mappedBy = "usuario"
-    )
-
-    /**
-     * array list conla referencia
-     */
-    @JsonManagedReference
-    private List<UsuarioRolModel> rol = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    private List<UsuarioRolModel> lines;
 
     /**
      * Controlador con tres parametros

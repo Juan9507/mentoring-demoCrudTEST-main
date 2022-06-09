@@ -33,9 +33,8 @@ public class UsuarioRolModel {
     /**
      * Punto de enlace con la entidad Contacto (un contacto puede tener muchos número de teléfono)
      */
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = UsuarioModel.class, optional = false)
-    @JoinColumn(name = "id_usuario", nullable = false)
-    @JsonManagedReference
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false, updatable = false)
     private UsuarioModel usuario;
 
     public UsuarioRolModel(Long Idrol, String rol) {
